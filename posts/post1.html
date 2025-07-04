@@ -21,6 +21,7 @@
                 <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="../index.html#about" class="nav-link">Über</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Kontakt</a></li>
+                <li><a href="../datenschutz.html" class="nav-link">Datenschutz</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -45,28 +46,29 @@
                         <div class="placeholder-image">SAP Treasury</div>
                     </div>
                     <h3>Schritt 1: Konfiguration der Zahlungsmethoden</h3>
-                    <p>Navigieren Sie zu <code>SPRO > Finanzwesen > Treasury > Zahlungsverkehr</code> und definieren Sie die Zahlungsmethoden...</p>
+                    <p>Navigieren Sie zu <code>SPRO > Finanzwesen > Treasury > Zahlungsverkehr</code> und definieren Sie die Zahlungsmethoden für Ihr Unternehmen...</p>
                     <pre><code class="language-abap">
 * Beispiel ABAP-Code für Zahlungsverkehr
 DATA: lv_payment_method TYPE zpayment_method.
 lv_payment_method = 'Z01'.
                     </code></pre>
-                    <p>Weitere Schritte umfassen die Anpassung der Bankkonten und die Integration mit FI/CO.</p>
-                    <div id="disqus_thread"></div>
-                    <script>
-                        var disqus_config = function () {
-                            this.page.url = window.location.href;
-                            this.page.identifier = 'post1';
-                            this.page.title = 'Zahlungsverkehr in SAP Treasury optimieren';
-                        };
-                        (function() {
-                            var d = document, s = d.createElement('script');
-                            s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                        })();
+                    <p>Weitere Schritte umfassen die Anpassung der Bankkonten und die Integration mit FI/CO...</p>
+                    <p class="comment-note">Ein GitHub-Konto ist erforderlich, um Kommentare zu hinterlassen.</p>
+                    <div id="giscus-thread"></div>
+                    <script src="https://giscus.app/client.js"
+                        data-repo="IHR_GITHUB_USERNAME/sap-insights-blog"
+                        data-repo-id="REPO_ID"
+                        data-category="Blog Comments"
+                        data-category-id="CATEGORY_ID"
+                        data-mapping="pathname"
+                        data-reactions-enabled="1"
+                        data-emit-metadata="0"
+                        data-input-position="top"
+                        data-theme="light"
+                        data-lang="de"
+                        crossorigin="anonymous"
+                        async>
                     </script>
-                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
                     <a href="../index.html#posts" class="read-more">Zurück zu allen Beiträgen</a>
                 </div>
             </article>
@@ -85,6 +87,7 @@ lv_payment_method = 'Z01'.
                     <li><a href="../index.html#posts">Beiträge</a></li>
                     <li><a href="../index.html#about">Über</a></li>
                     <li><a href="../index.html#contact">Kontakt</a></li>
+                    <li><a href="../datenschutz.html">Datenschutz</a></li>
                 </ul>
             </div>
             <div>
