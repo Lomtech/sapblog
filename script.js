@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 title: 'BADI Implementierung zur Prüfung von Wertpapierstammdaten',
                 excerpt: 'Erfahren Sie, wie Sie den Zahlungsverkehr in SAP Treasury effizient konfigurieren und automatisieren.',
-                link: './posts/post1.html',
+                link: 'posts/post1.html',
                 date: '04. Juli 2025',
                 category: 'SAP Treasury',
                 readTime: '5 Min. Lesezeit'
