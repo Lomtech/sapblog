@@ -210,12 +210,12 @@ body {
 }
 
 .btn-primary {
-    background: #1a1a1a;
+    background: var(--accent-color);
     color: white;
 }
 
 .btn-primary:hover {
-    background: #e1e5e9;
+    background: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: var(--shadow-medium);
 }
