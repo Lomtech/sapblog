@@ -2,14 +2,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('script.js loaded'); // Debug log
 
+    // Basis-URL für GitHub Pages und lokale Entwicklung
+    const baseUrl = window.location.hostname === 'localhost' ? '' : '/sapblog';
+
     // Hamburger-Menü für Mobilgeräte
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (hamburger && navMenu) {
+        const toggleMenu = () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        };
+
+        hamburger.addEventListener('click', toggleMenu);
+        hamburger.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Verhindert Doppelklicks auf Touch
+            toggleMenu();
+        });
+
+        // Schließt Menü bei Klick außerhalb
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    }
 
     // Beitragsübersicht laden
     const postList = document.getElementById('post-list');
@@ -18,14 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 title: 'BADI Implementierung zur Prüfung von Wertpapierstammdaten',
                 excerpt: 'Erfahren Sie, wie Sie den Zahlungsverkehr in SAP Treasury effizient konfigurieren und automatisieren.',
-                link: 'posts/post1.html',
+                link: `${baseUrl}/posts/post1.html`,
                 date: '04. Juli 2025',
                 category: 'SAP Treasury',
                 readTime: '5 Min. Lesezeit'
             }
         ];
 
-        postList.innerHTML = posts.map(post => `
+        postList.innerHTML = posts
+            .map(
+                (post) => `
             <div class="post-card">
                 <div class="post-image">
                     <div class="placeholder-image">${post.category}</div>
@@ -41,71 +61,92 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="${post.link}" class="read-more">Weiterlesen</a>
                 </div>
             </div>
-        `).join('');
+        `
+            )
+            .join('');
     }
 
     // Dynamische Navigation: Unterstrich verschieben
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname;
 
     // Funktion zum Entfernen und Setzen der .active-Klasse
     const setActiveLink = (href) => {
-        navLinks.forEach(link => {
+        navLinks.forEach((link) => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === href) {
+            const linkHref = link.getAttribute('href');
+            const normalizedLink = linkHref.startsWith('/') ? linkHref : `/${linkHref}`;
+            const normalizedHref = href.startsWith('/') ? href : `/${href}`;
+            if (normalizedLink === normalizedHref || normalizedLink.split('#')[0] === normalizedHref) {
                 link.classList.add('active');
             }
         });
     };
 
     // Setze .active basierend auf der aktuellen Seite
-    if (currentPath === 'index.html' || currentPath === '') {
-        setActiveLink('index.html');
-    } else if (currentPath === 'datenschutz.html') {
-        setActiveLink('datenschutz.html');
-    } else {
-        // Für Post-Seiten (z. B. post1.html) Home aktivieren
-        setActiveLink('../index.html');
+    const pathSegments = currentPath.split('/');
+    const currentFile = pathSegments[pathSegments.length - 1] || '';
+
+    if (currentFile === '' || currentPath === '/sapblog/' || currentPath === '/sapblog') {
+        setActiveLink('/sapblog/');
+    } else if (currentFile === 'datenschutz.html') {
+        setActiveLink('/sapblog/datenschutz.html');
+    } else if (pathSegments.includes('posts')) {
+        setActiveLink('/sapblog/');
     }
 
     // Behandle Ankerlinks (#about, #contact) auf index.html
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            if (href.startsWith('#') && currentPath === 'index.html') {
-                e.preventDefault(); // Verhindert Standard-Scroll
+            if (href.startsWith('#') && (currentFile === '' || currentPath === '/sapblog/' || currentPath === '/sapblog')) {
+                e.preventDefault();
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Berücksichtigt fixed Header
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                     setActiveLink(href);
+                    // Schließt Menü bei Klick auf Ankerlink (Mobilgeräte)
+                    if (navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
                 }
             } else {
                 setActiveLink(href);
             }
         });
+
+        // Touch-Event für bessere Reaktionszeit
+        link.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            link.click();
+        });
     });
 
     // Aktualisiere .active beim Scrollen auf index.html
-    if (currentPath === 'index.html' || currentPath === '') {
+    if (currentFile === '' || currentPath === '/sapblog/' || currentPath === '/sapblog') {
         const sections = ['posts', 'about', 'contact'];
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.id;
-                    const href = sectionId ? `#${sectionId}` : 'index.html';
-                    setActiveLink(href);
-                }
-            });
-        }, {
-            rootMargin: '-100px 0px -50% 0px', // Trigger, wenn Abschnitt 50% sichtbar ist
-            threshold: 0.1
-        });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        const href = sectionId ? `#${sectionId}` : '/sapblog/';
+                        setActiveLink(href);
+                    }
+                });
+            },
+            {
+                rootMargin: '-100px 0px -50% 0px',
+                threshold: 0.1
+            }
+        );
 
-        sections.forEach(id => {
+        sections.forEach((id) => {
             const section = document.getElementById(id);
             if (section) observer.observe(section);
         });
