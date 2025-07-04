@@ -1,5 +1,6 @@
 // Hamburger-Menü für Mobilgeräte
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('script.js loaded'); // Debug log
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 

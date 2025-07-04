@@ -1,53 +1,67 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Einführung in SAP Fiori für Anfänger mit praktischen Beispielen.">
-    <meta name="keywords" content="SAP Fiori, SAP S/4HANA, UI5, Anfänger">
-    <meta name="author" content="Ihr Name">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Einführung in SAP Fiori für Anfänger mit praktischen Beispielen."
+    />
+    <meta name="keywords" content="SAP Fiori, SAP S/4HANA, UI5, Anfänger" />
+    <meta name="author" content="Ihr Name" />
     <title>Einführung in SAP Fiori für Anfänger | SAP Insights</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="../styles.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <h1><a href="../index.html">SAP Insights</a></h1>
-                <span class="brand-subtitle">Ihr Technischer Blog für SAP</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="../index.html#about" class="nav-link">Über</a></li>
-                <li><a href="../index.html#contact" class="nav-link">Kontakt</a></li>
-                <li><a href="../datenschutz.html" class="nav-link">Datenschutz</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="nav-container">
+        <div class="nav-brand">
+          <h1><a href="../index.html">SAP Insights</a></h1>
+          <span class="brand-subtitle">Ihr Technischer Blog für SAP</span>
         </div>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../index.html#about" class="nav-link">Über</a></li>
+          <li><a href="../index.html#contact" class="nav-link">Kontakt</a></li>
+          <li>
+            <a href="../datenschutz.html" class="nav-link">Datenschutz</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </nav>
 
     <main class="main-content">
-        <section class="container">
-            <article class="post-card">
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span class="category">SAP Fiori</span>
-                        <time>06. Juli 2025</time>
-                        <span class="read-time">4 Min. Lesezeit</span>
-                    </div>
-                    <h2 class="post-title">Einführung in SAP Fiori für Anfänger</h2>
-                    <p class="post-excerpt">Eine Schritt-für-Schritt-Anleitung zur Erstellung Ihrer ersten SAP Fiori-App.</p>
-                    <div class="post-image">
-                        <div class="placeholder-image">SAP Fiori</div>
-                    </div>
-                    <h3>Schritt 1: SAP Web IDE einrichten</h3>
-                    <p>Beginnen Sie mit der Einrichtung der SAP Web IDE für die Entwicklung von Fiori-Apps...</p>
-                    <pre><code class="language-javascript">
+      <section class="container">
+        <article class="post-card">
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="category">SAP Fiori</span>
+              <time>06. Juli 2025</time>
+              <span class="read-time">4 Min. Lesezeit</span>
+            </div>
+            <h2 class="post-title">Einführung in SAP Fiori für Anfänger</h2>
+            <p class="post-excerpt">
+              Eine Schritt-für-Schritt-Anleitung zur Erstellung Ihrer ersten SAP
+              Fiori-App.
+            </p>
+            <div class="post-image">
+              <div class="placeholder-image">SAP Fiori</div>
+            </div>
+            <h3>Schritt 1: SAP Web IDE einrichten</h3>
+            <p>
+              Beginnen Sie mit der Einrichtung der SAP Web IDE für die
+              Entwicklung von Fiori-Apps...
+            </p>
+            <pre><code class="language-javascript">
 sap.ui.define([
     "sap/ui/core/mvc/Controller"
 ], function(Controller) {
@@ -55,58 +69,71 @@ sap.ui.define([
     return Controller.extend("my.app.controller.Main", {});
 });
                     </code></pre>
-                    <p>Weitere Schritte umfassen die Erstellung eines OData-Services und die Gestaltung des UI.</p>
-                    <p class="comment-note">Ein GitHub-Konto ist erforderlich, um Kommentare zu hinterlassen.</p>
-                    <div id="giscus-thread"></div>
-                    <script src="https://giscus.app/client.js"
-                        data-repo="lomtech/sapblog"
-                        data-repo-id="REPO_ID"
-                        data-category="Blog Comments"
-                        data-category-id="CATEGORY_ID"
-                        data-mapping="pathname"
-                        data-reactions-enabled="1"
-                        data-emit-metadata="0"
-                        data-input-position="top"
-                        data-theme="light"
-                        data-lang="de"
-                        crossorigin="anonymous"
-                        async>
-                    </script>
-                    <a href="../index.html#posts" class="read-more">Zurück zu allen Beiträgen</a>
-                </div>
-            </article>
-        </section>
+            <p>
+              Weitere Schritte umfassen die Erstellung eines OData-Services und
+              die Gestaltung des UI.
+            </p>
+            <p class="comment-note">
+              Ein GitHub-Konto ist erforderlich, um Kommentare zu hinterlassen.
+            </p>
+            <div id="giscus-thread"></div>
+            <script
+              src="https://giscus.app/client.js"
+              data-repo="Lomtech/sapblog"
+              data-repo-id="R_kgDOPG4aPg"
+              data-category="General"
+              data-category-id="DIC_kwDOPG4aPs4CseSM"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="1"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="de"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async
+            ></script>
+            <a href="../index.html#posts" class="read-more"
+              >Zurück zu allen Beiträgen</a
+            >
+          </div>
+        </article>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-content">
-            <div>
-                <h3>SAP Insights</h3>
-                <p>Ihr Blog für SAP Treasury und ABAP-Entwicklung.</p>
-            </div>
-            <div>
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="../index.html#posts">Beiträge</a></li>
-                    <li><a href="../index.html#about">Über</a></li>
-                    <li><a href="../index.html#contact">Kontakt</a></li>
-                    <li><a href="../datenschutz.html">Datenschutz</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Kontakt</h3>
-                <p>Email: <a href="mailto:ihre.email@domain.com">ihre.email@domain.com</a></p>
-            </div>
-            <div>
-                <h3>Folgen</h3>
-                <p><a href="#">LinkedIn</a> | <a href="#">X</a></p>
-            </div>
+      <div class="container footer-content">
+        <div>
+          <h3>SAP Insights</h3>
+          <p>Ihr Blog für SAP Treasury und ABAP-Entwicklung.</p>
         </div>
-        <div class="container">
-            <p>© 2025 SAP Insights. Alle Rechte vorbehalten.</p>
+        <div>
+          <h3>Links</h3>
+          <ul>
+            <li><a href="../index.html#posts">Beiträge</a></li>
+            <li><a href="../index.html#about">Über</a></li>
+            <li><a href="../index.html#contact">Kontakt</a></li>
+            <li><a href="../datenschutz.html">Datenschutz</a></li>
+          </ul>
         </div>
+        <div>
+          <h3>Kontakt</h3>
+          <p>
+            Email:
+            <a href="mailto:ihre.email@domain.com">ihre.email@domain.com</a>
+          </p>
+        </div>
+        <div>
+          <h3>Folgen</h3>
+          <p><a href="#">LinkedIn</a> | <a href="#">X</a></p>
+        </div>
+      </div>
+      <div class="container">
+        <p>© 2025 SAP Insights. Alle Rechte vorbehalten.</p>
+      </div>
     </footer>
 
     <script src="../script.js"></script>
-</body>
+  </body>
 </html>
