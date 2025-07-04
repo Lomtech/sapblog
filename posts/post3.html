@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Einführung in SAP Fiori für Anfänger mit praktischen Beispielen.">
+    <meta name="keywords" content="SAP Fiori, SAP S/4HANA, UI5, Anfänger">
+    <meta name="author" content="Ihr Name">
+    <title>Einführung in SAP Fiori für Anfänger | SAP Insights</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1><a href="../index.html">SAP Insights</a></h1>
+                <span class="brand-subtitle">Ihr Technischer Blog für SAP</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">Über</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="container">
+            <article class="post-card">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="category">SAP Fiori</span>
+                        <time>06. Juli 2025</time>
+                        <span class="read-time">4 Min. Lesezeit</span>
+                    </div>
+                    <h2 class="post-title">Einführung in SAP Fiori für Anfänger</h2>
+                    <p class="post-excerpt">Eine Schritt-für-Schritt-Anleitung zur Erstellung Ihrer ersten SAP Fiori-App.</p>
+                    <div class="post-image">
+                        <div class="placeholder-image">SAP Fiori</div>
+                    </div>
+                    <h3>Schritt 1: SAP Web IDE einrichten</h3>
+                    <p>Beginnen Sie mit der Einrichtung der SAP Web IDE für die Entwicklung von Fiori-Apps...</p>
+                    <pre><code class="language-javascript">
+sap.ui.define([
+    "sap/ui/core/mvc/Controller"
+], function(Controller) {
+    "use strict";
+    return Controller.extend("my.app.controller.Main", {});
+});
+                    </code></pre>
+                    <p>Weitere Schritte umfassen die Erstellung eines OData-Services und die Gestaltung des UI.</p>
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = window.location.href;
+                            this.page.identifier = 'post3';
+                            this.page.title = 'Einführung in SAP Fiori für Anfänger';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="../index.html#posts" class="read-more">Zurück zu allen Beiträgen</a>
+                </div>
+            </article>
+        </section>
+    </main>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tutorial zur Optimierung von Zahlungsverkehr in SAP Treasury mit praktischen Beispielen.">
+    <meta name="keywords" content="SAP Treasury, Zahlungsverkehr, SAP S/4HANA, ABAP">
+    <meta name="author" content="Ihr Name">
+    <title>Zahlungsverkehr in SAP Treasury optimieren | SAP Insights</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1><a href="../index.html">SAP Insights</a></h1>
+                <span class="brand-subtitle">Ihr Technischer Blog für SAP</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">Über</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="container">
+            <article class="post-card">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span class="category">SAP Treasury</span>
+                        <time>04. Juli 2025</time>
+                        <span class="read-time">5 Min. Lesezeit</span>
+                    </div>
+                    <h2 class="post-title">Zahlungsverkehr in SAP Treasury optimieren</h2>
+                    <p class="post-excerpt">Erfahren Sie, wie Sie den Zahlungsverkehr in SAP Treasury effizient konfigurieren und automatisieren.</p>
+                    <div class="post-image">
+                        <div class="placeholder-image">SAP Treasury</div>
+                    </div>
+                    <h3>Schritt 1: Konfiguration der Zahlungsmethoden</h3>
+                    <p>Navigieren Sie zu <code>SPRO > Finanzwesen > Treasury > Zahlungsverkehr</code> und definieren Sie die Zahlungsmethoden...</p>
+                    <pre><code class="language-abap">
+* Beispiel ABAP-Code für Zahlungsverkehr
+DATA: lv_payment_method TYPE zpayment_method.
+lv_payment_method = 'Z01'.
+                    </code></pre>
+                    <p>Weitere Schritte umfassen die Anpassung der Bankkonten und die Integration mit FI/CO.</p>
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = window.location.href;
+                            this.page.identifier = 'post1';
+                            this.page.title = 'Zahlungsverkehr in SAP Treasury optimieren';
+                        };
+                        (function() {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://YOUR_DISQUS_SHORTNAME.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="../index.html#posts" class="read-more">Zurück zu allen Beiträgen</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <h3>SAP Insights</h3>
+                <p>Ihr Blog für SAP Treasury und ABAP-Entwicklung.</p>
+            </div>
+            <div>
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="../index.html#posts">Beiträge</a></li>
+                    <li><a href="../index.html#about">Über</a></li>
+                    <li><a href="../index.html#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <p>Email: <a href="mailto:ihre.email@domain.com">ihre.email@domain.com</a></p>
+            </div>
+            <div>
+                <h3>Folgen</h3>
+                <p><a href="#">LinkedIn</a> | <a href="#">X</a></p>
+            </div>
+        </div>
+        <div class="container">
+            <p>© 2025 SAP Insights. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

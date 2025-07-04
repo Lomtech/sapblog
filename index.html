@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Technischer Blog über SAP Treasury und ABAP-Entwicklung mit praktischen Tutorials und Einblicken.">
+    <meta name="keywords" content="SAP Treasury, ABAP, SAP S/4HANA, Technischer Journalismus">
+    <meta name="author" content="Ihr Name">
+    <title>SAP Insights | Technischer Blog</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1><a href="index.html">SAP Insights</a></h1>
+                <span class="brand-subtitle">Ihr Technischer Blog für SAP</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">Über</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <h1 class="hero-title">SAP Insights</h1>
+                <p class="hero-subtitle">Praktische Tipps und Tutorials für SAP Treasury & ABAP</p>
+                <p class="hero-description">Entdecken Sie tiefgehende Artikel zu SAP Treasury und ABAP-Entwicklung, die Ihnen helfen, Ihre Prozesse zu optimieren und Best Practices umzusetzen.</p>
+                <div class="hero-cta">
+                    <a href="#posts" class="btn btn-primary">Beiträge entdecken</a>
+                    <a href="#contact" class="btn btn-secondary">Kontakt aufnehmen</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-graphic">
+                    <span class="sap-icon">SAP</span>
+                    <div class="tech-stack">
+                        <span class="tech-item">SAP Treasury</span>
+                        <span class="tech-item">ABAP</span>
+                        <span class="tech-item">S/4HANA</span>
+                        <span class="tech-item">Fiori</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section id="posts" class="posts-section">
+            <div class="container">
+                <h2 class="section-title">Neueste Beiträge</h2>
+                <div class="posts-grid" id="post-list"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title">Über mich</h2>
+                <div class="about-content">
+                    <div class="profile">
+                        <h3>Ihr Name</h3>
+                        <p class="profile-description">Ich bin ein erfahrener SAP Treasury-Berater und ABAP-Entwickler mit über 10 Jahren Erfahrung in der Optimierung von Finanzprozessen und der Entwicklung maßgeschneiderter SAP-Lösungen. Mein Werdegang umfasst Projekte in der Implementierung von SAP S/4HANA, Cash Management, und ABAP-Programmierung für internationale Unternehmen.</p>
+                        <h4>Beruflicher Werdegang</h4>
+                        <ul>
+                            <li><strong>SAP Treasury-Berater (2015–heute)</strong>: Leitung von Implementierungsprojekten für SAP Treasury-Module (Cash Management, Risk Management) bei globalen Konzernen.</li>
+                            <li><strong>ABAP-Entwickler (2012–2015)</strong>: Entwicklung und Optimierung von ABAP-Programmen für FI/CO und MM-Module.</li>
+                            <li><strong>Ausbildung</strong>: M.Sc. Wirtschaftsinformatik, Technische Universität München.</li>
+                        </ul>
+                        <h4>Fähigkeiten</h4>
+                        <div class="skills-grid">
+                            <span class="skill-item">SAP Treasury</span>
+                            <span class="skill-item">ABAP OO</span>
+                            <span class="skill-item">SAP S/4HANA</span>
+                            <span class="skill-item">SAP Fiori</span>
+                            <span class="skill-item">Cash Management</span>
+                            <span class="skill-item">Risk Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Kontakt & Newsletter</h2>
+                    <p>Haben Sie Fragen oder möchten Sie Updates zu neuen Beiträgen? Nutzen Sie das Kontaktformular oder abonnieren Sie meinen Newsletter.</p>
+                    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="newsletter-form">
+                        <input type="text" name="name" placeholder="Ihr Name" required>
+                        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+                        <textarea name="message" placeholder="Ihre Nachricht" rows="4"></textarea>
+                        <input type="checkbox" name="newsletter" id="newsletter" value="yes">
+                        <label for="newsletter">Newsletter abonnieren</label>
+                        <button type="submit" class="btn btn-primary">Absenden</button>
+                    </form>
+                    <p class="newsletter-note">Ihre Daten sind sicher und werden gemäß DSGVO verarbeitet.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <h3>SAP Insights</h3>
+                <p>Ihr Blog für SAP Treasury und ABAP-Entwicklung.</p>
+            </div>
+            <div>
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#posts">Beiträge</a></li>
+                    <li><a href="#about">Über</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Kontakt</h3>
+                <p>Email: <a href="mailto:ihre.email@domain.com">ihre.email@domain.com</a></p>
+            </div>
+            <div>
+                <h3>Folgen</h3>
+                <p><a href="#">LinkedIn</a> | <a href="#">X</a></p>
+            </div>
+        </div>
+        <div class="container">
+            <p>© 2025 SAP Insights. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
