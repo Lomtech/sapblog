@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Tutorial zur Optimierung von Zahlungsverkehr in SAP Treasury mit praktischen Beispielen."
+      content="SAP Treasury BAdI TPM_SEC_CHECK_DATA Implementierung für ISIN-Validierung in FWZZ"
     />
     <meta
       name="keywords"
-      content="SAP Treasury, Zahlungsverkehr, SAP S/4HANA, ABAP"
+      content="SAP Treasury, BAdI, TPM_SEC_CHECK_DATA, ISIN, FWZZ, ABAP"
     />
-    <meta name="author" content="Ihr Name" />
-    <title>Zahlungsverkehr in SAP Treasury optimieren | SAP Insights</title>
+    <meta name="author" content="Lom-Ali Imadaev" />
+    <title>
+      SAP Treasury BAdI: ISIN-Validierung mit TPM_SEC_CHECK_DATA | SAP Insights
+    </title>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;700&display=swap"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
   </head>
@@ -47,35 +53,227 @@
         <article class="post-card">
           <div class="post-content">
             <div class="post-meta">
-              <span class="category">SAP Treasury</span>
+              <span class="category">BAdI Implementierung</span>
               <time>04. Juli 2025</time>
-              <span class="read-time">5 Min. Lesezeit</span>
+              <span class="read-time">8 Min. Lesezeit</span>
             </div>
             <h2 class="post-title">
-              Zahlungsverkehr in SAP Treasury optimieren
+              SAP Treasury BAdI: ISIN-Validierung mit TPM_SEC_CHECK_DATA
             </h2>
             <p class="post-excerpt">
-              Erfahren Sie, wie Sie den Zahlungsverkehr in SAP Treasury
-              effizient konfigurieren und automatisieren.
+              Implementierung des BAdI TPM_SEC_CHECK_DATA zur Validierung von
+              ISIN-Bedingungen in der SAP Treasury Transaktion FWZZ mit
+              praktischen Beispielen und Tests.
             </p>
             <div class="post-image">
-              <div class="placeholder-image">SAP Treasury</div>
+              <div class="placeholder-image">
+                SAP Treasury BAdI Implementierung
+              </div>
             </div>
-            <h3>Schritt 1: Konfiguration der Zahlungsmethoden</h3>
-            <p>
-              Navigieren Sie zu
-              <code>SPRO > Finanzwesen > Treasury > Zahlungsverkehr</code> und
-              definieren Sie die Zahlungsmethoden für Ihr Unternehmen...
-            </p>
-            <pre><code class="language-abap">
-* Beispiel ABAP-Code für Zahlungsverkehr
-DATA: lv_payment_method TYPE zpayment_method.
-lv_payment_method = 'Z01'.
-                    </code></pre>
-            <p>
-              Weitere Schritte umfassen die Anpassung der Bankkonten und die
-              Integration mit FI/CO...
-            </p>
+
+            <section id="anforderung">
+              <h3>1. Anforderung</h3>
+              <p>
+                Der BAdI <strong>TPM_SEC_CHECK_DATA</strong> soll so implementiert
+                werden, dass gewährleistet ist, dass eine ISIN bei der Prüfung und
+                Sicherung in der Transaktion FWZZ den vordefinierten Bedingungen
+                entspricht.
+              </p>
+              <p class="subtitle"><strong>Bedingungen:</strong></p>
+              <ul>
+                <li>Eine ISIN hat 12 Stellen</li>
+                <li>Die ersten beiden Stellen der ISIN sind Buchstaben</li>
+              </ul>
+            </section>
+
+            <section id="badi-implementierung">
+              <h3>2. BAdI-Implementierung</h3>
+              <h4>2.1 BAdI-Implementierung Anlage</h4>
+              <p>
+                Die Erstellung der BAdI-Implementierung erfolgt über die
+                Transaktion <strong>SE19</strong>. Hierbei wird im Bereich "Create
+                Implementation" die BAdI-Bezeichnung
+                <code>TPM_SEC_CHECK_DATA</code> als Enhancement Spot eingetragen
+                und anschließend über "Create" angelegt.
+              </p>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image1.png"
+                  alt="SAP Treasury BAdI Implementierung - Schritt 1"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+              <p>
+                Anschließend erfolgt die Erfassung des Enhancements mit einem
+                passenden Namen und einer entsprechenden Funktionsbeschreibung.
+              </p>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image2.png"
+                  alt="SAP Treasury BAdI Implementierung - Schritt 2"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+              <p>
+                Danach wird eine Implementierungsklasse festgelegt. Die folgende
+                Abbildung veranschaulicht die Definition der Beispielklasse
+                <code>ZCL_IML_TPM_SEC_CHECK_DATA</code>.
+              </p>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image3.png"
+                  alt="SAP Treasury BAdI Implementierung - Klasse"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+              <p>
+                Damit ist ein Enhancement mit der zugehörigen Klasse erstellt.
+              </p>
+              <p>
+                Im nächsten Schritt wird die Implementierung aktiviert. Dazu wird
+                das Kontrollkästchen „Active Implementation" markiert und die
+                Implementierung durch „Speichern und Aktivieren" wirksam
+                geschaltet. Dadurch wird der BAdI bei der Ausführung der Prüfung
+                und Speicherung in der Transaktion FWZZ durchlaufen.
+              </p>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image4.png"
+                  alt="SAP Treasury BAdI Implementierung - Aktivierung"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+            </section>
+
+            <section id="badi-bedingungen">
+              <h3>3. Formulierung der Bedingungen im BAdI</h3>
+              <p>
+                In der automatisch generierten BAdI-Klasse
+                <div class="profile-image-container">
+                  <img
+                    src="../screenshots/image5.png"
+                    alt="SAP Treasury BAdI Implementierung - Code"
+                    class="profile-pic"
+                    loading="lazy"
+                  />
+                </div>
+                <code>ZCL_IML_TPM_SEC_CHECK_DATA</code> wird die Logik zur Prüfung
+                der ISIN implementiert. Im Folgenden wird ein Beispielcode
+                dargestellt:
+              </p>
+              <pre class="language-abap"><code class="language-abap">
+METHOD if_tpm_sec_check_data~check_security_data.
+  
+  DATA: lv_isin_length TYPE i,
+        lv_first_two   TYPE string.
+  
+  " ISIN-Länge prüfen
+  lv_isin_length = strlen( is_security_data-isin ).
+  
+  IF lv_isin_length NE 12.
+    MESSAGE e001(ztpm) WITH 'ISIN muss genau 12 Stellen haben'.
+  ENDIF.
+  
+  " Erste zwei Stellen auf Buchstaben prüfen
+  lv_first_two = is_security_data-isin+0(2).
+  
+  IF lv_first_two CN 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.
+    MESSAGE e002(ztpm) WITH 'Erste zwei Stellen müssen Buchstaben sein'.
+  ENDIF.
+  
+ENDMETHOD.
+              </code></pre>
+              <p>
+                Der oben genannte Code überprüft zunächst, ob die ISIN eine Länge
+                von 12 Stellen aufweist. Die zweite Prüfung stellt sicher, dass
+                die ersten beiden Stellen Buchstaben sind.
+              </p>
+              <p>
+                Jede Abweichung von diesen beiden Bedingungen soll bei der Prüfung
+                oder Speicherung des Wertpapiers eine Fehlermeldung auslösen und
+                den Vorgang abbrechen.
+              </p>
+            </section>
+
+            <section id="tests">
+              <h3>4. Tests</h3>
+              <h4>4.1 Prüfung und Anlage einer Gattung mit Security ID ungleich der Länge 12 Stellen</h4>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image6.png"
+                  alt="SAP Treasury BAdI Test - Falsche Länge"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+              <p>
+                Die Gattung <code>DE1234</code> hat keine 12 Stellen, was die in
+                der obigen Abbildung gezeigte Fehlermeldung hervorruft.
+              </p>
+              <p>
+                Um mit der Bearbeitung fortzufahren, kann zum Beispiel auf das
+                Bearbeitungs-Icon geklickt werden. Dadurch kann die
+                ISIN-Bezeichnung erneut angepasst werden.
+              </p>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image7.png"
+                  alt="SAP Treasury BAdI Test - Bearbeitung"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+              <h4>4.2 Prüfung und Anlage einer Gattung mit Security ID ohne Buchstaben in den ersten beiden Stellen</h4>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image8.png"
+                  alt="SAP Treasury BAdI Test - Falsche Buchstaben"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+              <p>
+                Die Gattung <code>D12345678912</code> hat nur einen Buchstaben in
+                den ersten beiden Stellen, was die in der obigen Abbildung
+                gezeigte Fehlermeldung hervorruft.
+              </p>
+              <h4>4.3 Verhalten bei Erfüllung der beiden Bedingungen</h4>
+              <p class="subtitle"><strong>Prüfung:</strong></p>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image9.png"
+                  alt="SAP Treasury BAdI Test - Prüfung erfolgreich"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+              <p class="subtitle"><strong>Sichern:</strong></p>
+              <div class="profile-image-container">
+                <img
+                  src="../screenshots/image10.png"
+                  alt="SAP Treasury BAdI Test - Sicherung erfolgreich"
+                  class="profile-pic"
+                  loading="lazy"
+                />
+              </div>
+            </section>
+
+            <section id="zusammenfassung">
+              <h3>Zusammenfassung</h3>
+              <p>
+                Mit der Implementierung des BAdI
+                <code>TPM_SEC_CHECK_DATA</code> können Sie die Datenqualität bei
+                der ISIN-Eingabe in SAP Treasury sicherstellen. Die Validierung
+                erfolgt automatisch bei jeder Prüfung und Speicherung in der
+                Transaktion FWZZ und verhindert fehlerhafte ISIN-Eingaben durch
+                klare Fehlermeldungen.
+              </p>
+            </section>
+
             <p class="comment-note">
               Ein GitHub-Konto ist erforderlich, um Kommentare zu hinterlassen.
             </p>
@@ -137,6 +335,8 @@ lv_payment_method = 'Z01'.
       </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-abap.min.js"></script>
     <script src="../script.js"></script>
   </body>
 </html>

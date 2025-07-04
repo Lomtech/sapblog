@@ -16,28 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (postList) {
         const posts = [
             {
-                title: 'Zahlungsverkehr in SAP Treasury optimieren',
+                title: 'BADI Implementierung zur Prüfung von Wertpapierstammdaten',
                 excerpt: 'Erfahren Sie, wie Sie den Zahlungsverkehr in SAP Treasury effizient konfigurieren und automatisieren.',
                 link: 'posts/post1.html',
                 date: '04. Juli 2025',
                 category: 'SAP Treasury',
                 readTime: '5 Min. Lesezeit'
-            },
-            {
-                title: 'ABAP Best Practices für S/4HANA',
-                excerpt: 'Erfahren Sie, wie Sie sauberen und effizienten ABAP-Code für SAP S/4HANA schreiben.',
-                link: 'posts/post2.html',
-                date: '05. Juli 2025',
-                category: 'ABAP',
-                readTime: '6 Min. Lesezeit'
-            },
-            {
-                title: 'Einführung in SAP Fiori für Anfänger',
-                excerpt: 'Eine Schritt-für-Schritt-Anleitung zur Erstellung Ihrer ersten SAP Fiori-App.',
-                link: 'posts/post3.html',
-                date: '06. Juli 2025',
-                category: 'SAP Fiori',
-                readTime: '4 Min. Lesezeit'
             }
         ];
 
